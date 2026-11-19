@@ -1,0 +1,32 @@
+{
+  "name": "navi-public",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A polished Windows media library and player for the videos and subtitles you already have.",
+  "author": "0x4l1d",
+  "license": "MIT",
+  "type": "module",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json && svelte-check --tsconfig ./tsconfig.json --threshold error",
+    "test": "node --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test && node tools/audit-source.mjs",
+    "dist": "npm run build && electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
+    "@fontsource-variable/outfit": "5.3.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@types/node": "^24.10.1",
+    "electron": "44.11.4",
+    "electron-builder": "26.18.0",
+    "electron-vite": "^5.0.0",
+    "svelte": "^5.58.0",
+    "svelte-check": "^4.3.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}
